@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body> 
+    <h1>Disease Prediction App</h1>
+    <div id="main">
+         <form action = "\predict"method="POST">
+        <label for="itching">Itching</label>
+            <select name="itching" id="itching">
+              <option value="0">Yes</option>
+              <option value="1">No</option>
+                         </select> 
+        <label for="skin_rash">Skin Rash</label>
+        <select name="skin_rash" id="skin_rash">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="nodal_skin_eruptions">Nodal Skin Eruptions</label>
+        <select name="nodal_skin eruptions" id="nodel_skin_eruptions">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="continuous_sneezing">Continuous Sneezing</label>
+        <select name="continuous_sneezing" id="continuous_sneezing">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="shivering">Shivering</label>
+        <select name="shivering" id="shivering">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="chills">Chills</label>
+        <select name="chills" id="chills">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="joint_pain">Joint Pain</label>
+        <select name="joint_pain" id="joint_pain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="stomach_pain">Stomach Pain</label>
+        <select name="stomach_pain" id="stomach_pain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="acidity">Acidity</label>
+        <select name="acidity" id="acidity">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="ulcers_on_tongue">Ulcers on Tongue</label>
+        <select name="ulcers_on_tongue" id="ulcers_on_tongue">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="muscle_wasting">Muscle Wasting</label>
+        <select name="muscle_wasting" id="muscle_wasting">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="vomiting">Vomiting</label>
+        <select name="vomiting" id="vomiting">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="burning_micturition">Burning Micturition</label>
+        <select name="burning_micturition" id="burning_micturition">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="spotting_ urination">Spotting Urination</label>
+        <select name="spotting_ urination" id="spotting_ urination">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="fatigue">Fatigue</label>
+        <select name="fatigue" id="fatigue">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="weight_gain">Weight Gain</label>
+        <select name="weight_gain" id="weight_gain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="anxiety">Anxiety</label>
+        <select name="anxiety" id="anxiety">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="mood_swings">Mood Swings</label>
+        <select name="mood_swings" id="mood_swings">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="weight_loss">Weight Loss</label>
+        <select name="weight_loss" id="weight_loss">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="restlessness">Restlessness</label>
+        <select name="restlessness" id="restlessness">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="lethargy">Lathargy</label>
+        <select name="lethargy" id="lethargy">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="patches_in_throat">Patches In Throat</label>
+        <select name="patches_in_throat" id="patches_in_throat">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+                        
+        <label for="irregular_sugar_level">Irregular Sugar Level</label>
+        <select name="irregular_sugar_level" id="irregular_sugar_level">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="cough">Cough</label>
+        <select name="cough" id="cough">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="high_fever">High Fever</label>
+        <select name="high_fever" id="high_fever">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="sunken_eyes">Sunken Eyes</label>
+        <select name="sunken_eyes" id="sunken_eyes">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="breathlessness">Breathlessness</label>
+        <select name="breathlessness" id="breathlessness">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="sweating">Sweating</label>
+        <select name="sweating" id="sweating">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="dehydration">Dehydration</label>
+        <select name="dehydration" id="dehydration">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="indigestion">Indigestion</label>
+        <select name="indigestion" id="indigestion">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="headache">Headache</label>
+        <select name="headache" id="headache">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="yellowish_skin">Yellowish Skin</label>
+        <select name="yellowish_skin" id="yellowish_skin">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="dark_urine">Dark Urine</label>
+        <select name="dark_urine" id="dark_urine">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="nausea">Nausea</label>
+        <select name="nausea" id="nausea">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="loss_of_appetite">Loss of Appetite</label>
+        <select name="loss_of_appetite" id="loss_of_appetite">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="pain_behind_the_eyes">Pain Behind the Eyes</label>
+        <select name="pain_behind_the_eyes" id="pain_behind_the_eyes">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="back_pain">Back Pain</label>
+        <select name="back_pain" id="back_pain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="constipation">Constipation</label>
+        <select name="constipation" id="constipation">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="abdominal_pain">Abdominal Pain</label>
+        <select name="abdominal_pain" id="abdominal_pain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="diarrhoea">Diarrhoea</label>
+        <select name="diarrhoea" id="diarrhoea">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="mild_fever">Mild Fever</label>
+        <select name="mild_fever" id="mild_fever">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="yellow_urine">Yellow Urine</label>
+        <select name="yellow_urine" id="yellow_urine">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="yellowing_of_eyes">Yellowing of Eyes</label>
+        <select name="yellowing_of_eyes" id="yellowing_of_eyes">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        
+        <label for="acute_liver_failure">Acute Liver Failure</label>
+        <select name="acute_liver_failure" id="acute_liver_failure">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="fluid_overload">Fluid Overload</label>
+        <select name="fluid_overload" id="fluid_overload">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        <label for="swelling_of_stomach">Swelling of Stomach</label>
+        <select name="swelling_of_stomach" id="swelling_of_stomach">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+        
+        <label for="swelled_lymph_nodes">Swelled Lymph Nodes</label>
+        <select name="swelled_lymph_nodes" id="swelled_lymph_nodes">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+        
+        <label for="malaise">Mailaise</label>
+        <select name="malaise" id="malaise">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+        
+        <label for="blurred_and_distorted_vision">Blurred and Distorted Vision</label>
+        <select name="blurred_and_distorted_vision" id="blurred_and_distorted_vision">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+            <label for="phlegm">Phlegm</label>
+        <select name="phlegm" id="phlegm">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+        <label for="throat_irritation">Throat Irritation</label>
+        <select name="throat_irritation" id="throat_irritation">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="chest_pain">Chest Pain</label>
+        <select name="chest_pain" id="chest_pain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="weakness_in_limbs">Weakness in Limbs</label>
+        <select name="weakness_in_limbs" id="weakness_in_limbs">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="fast_heart_rate">Fast Heart Rate</label>
+        <select name="fast_heart_rate" id="fast_heart_rate">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="pain_during_bowel_movements">pain during Bowel Movements</label>
+        <select name="pain_during_bowel_movements" id="pain_during_bowel_movements">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="neck_pain">Neck Pain</label>
+        <select name="neck_pain" id="neck_pain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="dizziness">Dizziness</label>
+        <select name="dizziness" id="dizziness">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="cramps">Cramps</label>
+        <select name="cramps" id="cramps">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="obesity">Obesity</label>
+        <select name="obesity" id="obesity">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="excessive_hunger">Excessive Hunger</label>
+        <select name="excessive_hunger" id="excessive_hunger">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="extra_marital_contacts">Extra Marital Contacts</label>
+        <select name="extra_marital_contacts" id="extra_marital_contacts">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+        <label for="knee_pain">Knee Pain</label>
+        <select name="knee_pain" id="knee_pain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="muscle_weakness">Muscle Weakness</label>
+        <select name="muscle_weakness" id="muscle_weakness">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="stiff_neck">Stiff Neck</label>
+        <select name="stiff_neck" id="stiff_neck">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select><br><br> 
+        <label for="swelling_joints">Swelling Joints</label>
+        <select name="swelling_joints" id="swelling_joints">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="movement_stiffness">Movement Stiffness</label>
+        <select name="movement_stiffness" id="movement_stiffness">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="spinning_movements">Spinning Movements</label>
+        <select name="spinning_movements" id="spinning_movements">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="loss_of_balance">Loss of Balance</label>
+        <select name="loss_of_balance" id="loss_of_balance">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="weakness_of_one_body_side">Weakness of one Body Side</label>
+        <select name="weakness_of_one_body_side" id="weakness_of_one_body_side">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        <label for="bladder_discomfort">Bladder Discomfort</label>
+        <select name="bladder_discomfort" id="bladder_discomfort">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+         <label for="foul_smell_of urine">Foul Smell of Urine</label>
+        <select name="foul_smell_of urine" id="foul_smell_of urine">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+         <label for="passage_of_gases">Passage of Gases</label>
+        <select name="passage_of_gases" id="passage_of_gases">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+         <label for="toxic_look_(typhos)">Toxic Look (typhos)</label>
+        <select name="toxic_look_(typhos)" id="toxic_look_(typhos)">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+         <label for="depression">Depression</label>
+        <select name="depression" id="depression">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+
+         <label for="irritability">Irritability</label>
+        <select name="irritability" id="irritability">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+
+         <label for="muscle_pain">Muscle Pain</label>
+        <select name="muscle_pain" id="muscle_pain">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+
+         <label for="red_spots_over_body">Red Spots over_Body</label>
+        <select name="red_spots_over_body" id="red_spots_over_body">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+         <label for="dischromic _patches">Dischromic Patches</label>
+        <select name="dischromic _patches" id="dischromic _patches">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+         <label for="watering_from_eyes">Watering from Eyes</label>
+        <select name="watering_from_eyes"  id="watering_from_eyes">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+
+         <label for="family_history">Family History</label>
+        <select name="family_history" id="family_history">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+         <label for="mucoid_sputum">Mucoid Sputum</label>
+        <select name="mucoid_sputum" id="mucoid_sputum">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select>
+
+         <label for="rusty_sputum">Rusty Sputum</label>
+        <select name="rusty_sputum" id="rusty_sputum">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+         <label for="lack_of_concentration">Lack of Concentration</label>
+        <select name="lack_of_concentration" id="lack_of_concentration">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+         <label for="visual_disturbances">Visual Disturbances</label>
+        <select name="visual_disturbances" id="visual_disturbances">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+
+        
+         <label for="blood_in_sputum">Blood in Sputum</label>
+        <select name="blood_in_sputum" id="blood_in_sputum">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+         <label for="pus_filled_pimples">Pus Filled Pimples</label>
+        <select name="pus_filled_pimples" id="pus_filled_pimples">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+         <label for="blackheads">Blackheads</label>
+        <select name="blackheads" id="blackheads">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+         <label for="scurring">Scurring</label>
+        <select name="scurring" id="scurring">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+         <label for="skin_peeling">Skin Peeling</label>
+        <select name="skin_peeling" id="skin_peeling">
+            <option value="0">Yes</option>
+            <option value="1">No</option>
+                        </select> 
+        
+         <label for="blister">Blister</label>
+        <select name="blister" id="blister">
+            <option value="0">Yes</option>
+            <option value="1">No</option></select>
+        <button type = "submit">Predict</button>
+              <h3>{{ prediction_text }}</h3>
+    </form>
+    </div>
+</body>
+</html>
